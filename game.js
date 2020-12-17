@@ -152,6 +152,7 @@ function countDown() {
 function endGame() {
     clearInterval(timer); // stop timer
     gameEnded = true; // game is no longer running
+    noLoop();
     select("#timer").html("Timed Out!");
 }
 
@@ -166,5 +167,6 @@ function restart() { //using a function to prevent auto reload
         executed = false;
         timeLeft = 3;
         select("#timer").html(timeLeft);
+        loop(); // restart draw()
     }
 }
